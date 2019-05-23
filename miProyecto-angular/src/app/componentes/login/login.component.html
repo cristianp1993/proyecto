@@ -1,0 +1,39 @@
+
+<div class="card col-md-5 offset-md-8">
+  <div class="card-header text-center">
+      <strong>Iniciar Sesión</strong>
+    </div>  
+    <div class="card-body">
+      <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+
+        <!-- Mensaje de error si la autenticacion no es correcta -->
+        <div class="alert alert-danger" [hidden]="!error">
+          {{ error }}
+        </div>
+
+        <div class="form-group">
+          <label for="txt_correo">Correo</label>
+          <!-- ngModel es el metodo que accede al objeto form para cpturar el email -->
+          <input type="text" class="form-control" name="mail" id="txt_correo" placeholder="patientiam@....com" [(ngModel)]="form.email" required>
+          <small id="lbl_meensaje" class="form-text text-muted">Nunca comparta su usuario con otra persona.</small>
+        </div>
+        <div class="form-group">
+          <label for="txt_contrasena">Contraseña</label>
+          <!-- ngModel es el metodo que accede al objeto form para cpturar el password -->
+          <input type="password" class="form-control" name="password" id="txt_contrasena" placeholder="Contraseña" [(ngModel)]="form.password" required>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="checkeado">
+          <label class="form-check-label" for="checkeado">Recordar</label>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Ingresar</button>
+        <button type="button" class="btn btn-info float-right"  [routerLink]="['/signup']">Registrarse</button>
+              
+      </form>
+      <small class="float-right m-3">
+          <a [routerLink]="['/request-reset']" >Recuperar</a>
+      </small>
+
+    </div>
+</div>
+  

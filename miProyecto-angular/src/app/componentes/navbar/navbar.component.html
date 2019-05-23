@@ -1,0 +1,8 @@
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand"><strong>Abya Yala</strong></a>
+    <form class="form-inline">      
+      <a class="navbar-brand my-2 my-sm-0" [routerLink]="['/login']" *ngIf ="!loggedIn">Iniciar Sesión</a>
+      <a class="navbar-brand my-2 my-sm-0" href="#" (click)="logout($event)" *ngIf ="loggedIn" >Cerrar Sesión</a>
+      <a class="navbar-brand my-2 my-sm-0" [routerLink]="['/profile']" *ngIf ="loggedIn"><strong>Principal</strong></a>
+    </form>
+  </nav>

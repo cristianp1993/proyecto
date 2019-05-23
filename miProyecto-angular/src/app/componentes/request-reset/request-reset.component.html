@@ -1,0 +1,25 @@
+
+<div class="card col-md-5 offset-md-4">
+    <div class="card-header text-center">
+        <strong>Enviar correo de recuperación</strong>
+      </div>  
+      <div class="card-body">
+        <form #requestReset=ngForm (ngSubmit)="onSubmit()">
+          <div class="form-group text-center">
+            <label for="txt_correo">Correo</label>
+            <!-- ngModel es el metodo que accede al objeto form para cpturar el email -->
+            <input type="text" class="form-control" name="mail" id="txt_correo" 
+            placeholder="patientiam@....com" [(ngModel)]="form.email" required>
+            <div class="alert alert-danger" [hidden]="!error">
+                {{ error }}
+            </div>      
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="!requestReset.valid">
+          Enviar</button>
+                
+        </form>
+        
+  
+      </div>
+  </div>
+    

@@ -1,0 +1,36 @@
+
+<div class="card col-md-5 offset-md-4">
+  <div class="card-header text-center">
+      <strong>Restablecer contraseña</strong>
+    </div>  
+    <div class="card-body">
+      <form #resetPassword=ngForm (ngSubmit)="onSubmit()">
+        
+        
+        <div class="form-group text-center">
+          <input type="text" class="form-control" name="mail" id="mail" placeholder="Ingrese correo"
+            [(ngModel)]="form.email" required> 
+            <small class="text-danger" [hidden]="!error">
+              {{ error }}
+            </small>
+        </div>
+        <div class="form-group text-center">
+          <input type="password" class="form-control" name="password" id="password" placeholder="Ingrese contraseña"
+           [(ngModel)]="form.password" required>
+           <small class="text-danger" [hidden]="!mensaje.password">
+            <!-- {{ mensaje.password }} -->
+          </small>      
+        </div>
+        <div class="form-group text-center">
+          <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" placeholder="Confirme contraseña"
+           [(ngModel)]="form.password_confirmation" required>      
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" [disabled]="!resetPassword.valid">
+        Cambiar</button>
+              
+      </form>
+      
+
+    </div>
+</div>
+  
