@@ -43,9 +43,9 @@ export class SignupComponent implements OnInit {
 
   };
 
-   //mensaje de error de autenticacion
+   //mensaje de error de registro
    errorAutenticacion(error){
-    this.error = error.errors;
+    this.error = error.error.errors;
   }
   ngOnInit() {
   }

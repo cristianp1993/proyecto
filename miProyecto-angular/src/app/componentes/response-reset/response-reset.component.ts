@@ -41,7 +41,7 @@ export class ResponseResetComponent implements OnInit {
     )
   }
 
-  respuesta(res){
+  respuesta(data){
 
     let _router = this.router;
 
@@ -57,7 +57,7 @@ export class ResponseResetComponent implements OnInit {
   
   errorAutenticacion(error){
     this.mensaje = error.error.errors;
-    this.error = error.error.error[0];
+    this.error = error.error.errors;
   };
 
 }

@@ -65,7 +65,7 @@ class ResetPasswordController extends Controller
     public function successResponse()
     {
         return response()->json([
-            'data' => 'Por favor revise su correo.'
+            'data' => 'Verifique su correo personal.'
         ], Response::HTTP_OK);
     }
 }
