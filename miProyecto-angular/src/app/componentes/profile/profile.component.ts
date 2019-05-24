@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MapaService } from 'src/app/services/mapa.service';
 
 
 
@@ -10,17 +9,11 @@ import { MapaService } from 'src/app/services/mapa.service';
 })
 export class ProfileComponent implements OnInit {
 
-  miMapa = null
-  constructor(private mapa : MapaService) { }
+ 
+  constructor() { }
 
   ngOnInit() {
-    this.miMapa;
-  }
-
-
-  mostrarMapa(){
-
-    this.miMapa = this.mapa.mapaInicial();
+    
   }
 
 }

@@ -1,19 +1,22 @@
-<nav class="navbar navbar-dark bg-dark">
+<div>
+
+  <nav class="navbar navbar-dark bg-dark">
     <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
-          Menu
-        </a>
+      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
+        Menu
+      </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" [routerLink]="['/routePath']" >Proyecto</a>
-          <a class="dropdown-item" [routerLink]="['/routePath']">Entidad</a>
-          <a class="dropdown-item" [routerLink]="['/routePath']">Grupo de Investigacion</a>
-          <a class="dropdown-item" [routerLink]="['/routePath']">Investigador</a>
+          <a class="dropdown-item" [routerLink]="['/proyecto']" >Proyecto</a>
+          <a class="dropdown-item" [routerLink]="['/entidad']">Entidad</a>
+          <a class="dropdown-item" [routerLink]="['/grupo-investigacion']">Grupo de Investigacion</a>
+          <a class="dropdown-item" [routerLink]="['/investigador']">Investigador</a>
         </div>
-    </li>
-    <a class="navbar-brand"><strong>Abya Yala</strong></a>
+      </li>
+      <a class="navbar-brand"><strong>Abya Yala</strong></a>
     <form class="form-inline">      
       <a class="navbar-brand my-2 my-sm-0" [routerLink]="['/login']" *ngIf ="!loggedIn">Iniciar Sesión</a>
       <a class="navbar-brand my-2 my-sm-0" href="#" (click)="logout($event)" *ngIf ="loggedIn" >Cerrar Sesión</a>
       <a class="navbar-brand my-2 my-sm-0" [routerLink]="['/profile']" *ngIf ="loggedIn"><strong>Principal</strong></a>
     </form>
   </nav>
+</div>

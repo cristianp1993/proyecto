@@ -10,9 +10,6 @@ import { ProfileComponent } from './componentes/profile/profile.component';
 import { PasswordComponent } from './componentes/password/password.component';
 import { RequestResetComponent } from './componentes/request-reset/request-reset.component';
 import { ResponseResetComponent } from './componentes/response-reset/response-reset.component';
-
-
-// libreria para usar el sidebar
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 //importacion del formModulo
@@ -24,7 +21,11 @@ import { HttpClientModule } from "@angular/common/http";
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
-import { MapaComponent } from './componentes/mapa/mapa.component';
+import { ProyectoComponent } from './activos/proyecto/proyecto.component';
+import { EntidadComponent } from './activos/entidad/entidad.component';
+import { InvestigadorComponent } from './activos/investigador/investigador.component';
+import { GrupoInvestigacionComponent } from './activos/grupo-investigacion/grupo-investigacion.component';
+import { MapaModule } from './geolocalizacion/mapa.module';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,10 @@ import { MapaComponent } from './componentes/mapa/mapa.component';
     PasswordComponent,
     RequestResetComponent,
     ResponseResetComponent,
-    MapaComponent
+    ProyectoComponent,
+    EntidadComponent,
+    InvestigadorComponent,
+    GrupoInvestigacionComponent
   ],
   imports: [
     BrowserModule,
@@ -49,8 +53,8 @@ import { MapaComponent } from './componentes/mapa/mapa.component';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
-  ],
+    MatIconModule,
+    MapaModule  ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
     SnotifyService
