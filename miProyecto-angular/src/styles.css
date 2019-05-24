@@ -11,3 +11,5 @@ con los ng-valid e invalidad asigno color para que gestionen los campos
 .ng-valid:not(form){
     border-left: 5px solid greenyellow;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
