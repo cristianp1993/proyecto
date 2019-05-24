@@ -24,6 +24,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { MapaComponent } from './componentes/mapa/mapa.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/mater
     ProfileComponent,
     PasswordComponent,
     RequestResetComponent,
-    ResponseResetComponent
+    ResponseResetComponent,
+    MapaComponent
   ],
   imports: [
     BrowserModule,
