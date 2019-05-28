@@ -1,3 +1,51 @@
-<p>
-  investigador works!
-</p>
+<div class="investigator card">
+    <div class="card-header text-center">
+        <strong>Investigador</strong>
+      </div>    
+      <div class="card-body">
+        <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12"> 
+          <div class="col-md-6">
+            <div class="form-group">
+            <label for="nombre">Nombre</label>
+            
+            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su nombre" [(ngModel)]="form.nombre" required>          
+            </div>
+            <div class="form-group">
+              <label for="cedula">Cedula</label>
+              <input type="number" class="form-control" name="cedula" id="cedula" placeholder="Ingrese su cedula" [(ngModel)]="form.cedula" required>          
+            </div>
+            <div class="form-group">
+              <label for="pApellido">Primer Apellido</label>
+              <input type="password" class="form-control" name="pApellido" id="pApellido" placeholder="Primer Apellido" [(ngModel)]="form.ape_paterno" 
+              required>
+            </div>
+            <div class="form-group">
+              <label for="sApellido">Segundo Apellido</label>
+              <input type="text" class="form-control" name="sApellido" id="sApellido" placeholder="Segundo apellido" 
+              [(ngModel)]="form.ape_materno">          
+            </div>
+          </div>
+          <div class="col-md-6 float-left">
+            <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="text" class="form-control" name="correo" id="correo" placeholder="Ingrese su correo" [(ngModel)]="form.correo" required>          
+            </div>
+            <div class="form-group">
+              <label for="telefono">Telefono</label>
+              <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese Telefono" 
+              [(ngModel)]="form.telefono" required>
+            </div>
+            <div class="form-group">
+              <label for="entidad">Entidad</label>
+              <input type="text" class="form-control" name="entidad" id="entidad" 
+              placeholder="Ingrese la entidad" [(ngModel)]="form.telefono" required>
+            </div>
+          </div>
+          <div class="btn btn-center">
+            <button type="submit" class="btn btn-primary" [disabled]="!investigadorForm.valid">Guardar</button>                
+          </div>
+        </form>
+  
+      </div>
+  </div>
+    
