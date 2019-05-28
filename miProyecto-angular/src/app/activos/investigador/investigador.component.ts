@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InvestigadorService } from 'src/app/services_activos/investigador.service';
 
 @Component({
   selector: 'app-investigador',
@@ -7,24 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvestigadorComponent implements OnInit {
 
-  form : {
-    cedula: null,
+  public form = {
     nombre: null,
-    ape_paterno : null,
-    ape_materno : null,
+    apellidouno : null,
+    apellidodos : null,
+    cedula: null,
     correo : null,
     telefono : null,
     ciudad: null,
     entidad: null
   }
 
-  constructor() { }
+  constructor(private investigador: InvestigadorService) { }
 
   ngOnInit() {
   }
 
   onSubmit(){
-
+    console.log(this.form);
+    this.investigador.createInv(this.form).subscribe(
+      data => console.log(data),
+      error => console.log(error));
   }
 
   

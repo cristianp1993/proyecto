@@ -21,11 +21,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
-import { ProyectoComponent } from './activos/proyecto/proyecto.component';
-import { EntidadComponent } from './activos/entidad/entidad.component';
-import { InvestigadorComponent } from './activos/investigador/investigador.component';
-import { GrupoInvestigacionComponent } from './activos/grupo-investigacion/grupo-investigacion.component';
+
 import { MapaModule } from './geolocalizacion/mapa.module';
+import { ActivosModule } from './activos/activos.module';
 
 @NgModule({
   declarations: [
@@ -36,11 +34,7 @@ import { MapaModule } from './geolocalizacion/mapa.module';
     ProfileComponent,
     PasswordComponent,
     RequestResetComponent,
-    ResponseResetComponent,
-    ProyectoComponent,
-    EntidadComponent,
-    InvestigadorComponent,
-    GrupoInvestigacionComponent
+    ResponseResetComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +48,8 @@ import { MapaModule } from './geolocalizacion/mapa.module';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MapaModule  ],
+    MapaModule,
+    ActivosModule ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
     SnotifyService

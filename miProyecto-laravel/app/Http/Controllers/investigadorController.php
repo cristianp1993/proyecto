@@ -8,20 +8,14 @@ use App\investigador;
 
 class investigadorController extends Controller
 {
-    //funciones que tendra
-    public function show( ){        
-         $data = investigador::all();
-        
-        $string='';
-        foreach ($data  as $dato){
-           $string .=  $dato.',';
-        }
-        
-        return $data;
+    //funciones 
+    public function show( ){                
+        return $data = investigador::all();
     }
 
-    public function create(Request $request){
-        return investigador::create($request->all());
+    public function store(Request $request){
+         investigador::create($request->all());
+         return response()->json(["mensaje" => "Investigador creado"]);
     }
 
     public function update (Request $request , $id){

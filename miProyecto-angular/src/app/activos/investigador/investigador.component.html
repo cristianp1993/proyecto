@@ -6,8 +6,7 @@
         <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12"> 
           <div class="col-md-6">
             <div class="form-group">
-            <label for="nombre">Nombre</label>
-            
+            <label for="nombre">Nombre</label>            
             <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su nombre" [(ngModel)]="form.nombre" required>          
             </div>
             <div class="form-group">
@@ -16,14 +15,15 @@
             </div>
             <div class="form-group">
               <label for="pApellido">Primer Apellido</label>
-              <input type="password" class="form-control" name="pApellido" id="pApellido" placeholder="Primer Apellido" [(ngModel)]="form.ape_paterno" 
-              required>
+              <input type="text" class="form-control" name="pApellido" id="pApellido" placeholder="Primer Apellido" 
+              [(ngModel)]="form.apellidouno" required>
             </div>
             <div class="form-group">
-              <label for="sApellido">Segundo Apellido</label>
-              <input type="text" class="form-control" name="sApellido" id="sApellido" placeholder="Segundo apellido" 
-              [(ngModel)]="form.ape_materno">          
+              <label for="sApellido">Primer Apellido</label>
+              <input type="text" class="form-control" name="sApellido" id="sApellido" placeholder="Segundo Apellido" 
+              [(ngModel)]="form.apellidodos">
             </div>
+            
           </div>
           <div class="col-md-6 float-left">
             <div class="form-group">
@@ -36,9 +36,14 @@
               [(ngModel)]="form.telefono" required>
             </div>
             <div class="form-group">
+              <label for="ciudad">Ciudad</label>
+              <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Seleccione ciudad" 
+              [(ngModel)]="form.ciudad" required>
+            </div>
+            <div class="form-group">
               <label for="entidad">Entidad</label>
               <input type="text" class="form-control" name="entidad" id="entidad" 
-              placeholder="Ingrese la entidad" [(ngModel)]="form.telefono" required>
+              placeholder="Ingrese la entidad" [(ngModel)]="form.entidad" required>
             </div>
           </div>
           <div class="btn btn-center">
