@@ -14,7 +14,7 @@ export class ResponseResetComponent implements OnInit {
   public mensaje = [];
   public error = [];
 
-  form ={
+  public form ={
     email : null,
     password :null,
     password_confirmation :null,

@@ -9,14 +9,14 @@ import { InvestigadorService } from 'src/app/services_activos/investigador.servi
 export class InvestigadorComponent implements OnInit {
 
   public form = {
-    nombre: null,
-    apellidouno : null,
-    apellidodos : null,
-    cedula: null,
-    correo : null,
-    telefono : null,
-    ciudad: null,
-    entidad: null
+    inv_nombre : null,
+    inv_apellPater : null,
+    inv_apellMater: null,
+    inv_cedula: null,
+    inv_correo: null,
+    inv_telefono: null,
+    fk_ciu_codigo: null,
+    fk_ent_codigo: null
   }
 
   constructor(private investigador: InvestigadorService) { }
