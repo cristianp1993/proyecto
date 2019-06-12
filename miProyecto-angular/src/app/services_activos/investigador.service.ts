@@ -18,9 +18,11 @@ export class InvestigadorService {
 
    createInv(data):Observable<any>{
      let json = JSON.stringify(data);
+     console.log(json);
      let params = 'json='+ json;
-     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded')
-   
-     return this.http.post(`${this.baseUrl}investigador/store`, params,{ headers: headers});
+     let headers = new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded');
+     let prueba = this.http.post(`${this.baseUrl}store`, params,{ headers: headers, responseType: 'text'});
+     console.log(prueba);
+     return this.http.post(`${this.baseUrl}store`, params,{ headers: headers, responseType: 'text'});
    }
 }

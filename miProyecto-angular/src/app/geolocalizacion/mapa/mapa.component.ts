@@ -17,6 +17,7 @@ export class MapaComponent implements OnInit {
     this.mapaInicial();
   }
 
+  
   mapaInicial(){
     let map
     map = new Map ({

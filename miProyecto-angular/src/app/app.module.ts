@@ -12,6 +12,8 @@ import { RequestResetComponent } from './componentes/request-reset/request-reset
 import { ResponseResetComponent } from './componentes/response-reset/response-reset.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+
+
 //importacion del formModulo
 import { FormsModule } from "@angular/forms";
 //importamos libreria http para hacer peticiones a servicios
@@ -24,6 +26,10 @@ import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/mater
 
 import { MapaModule } from './geolocalizacion/mapa.module';
 import { ActivosModule } from './activos/activos.module';
+
+// graficos
+import { ChartsModule } from 'ng2-charts';
+import { graficosModule } from "./analisis/graficos.module";
 
 @NgModule({
   declarations: [
@@ -49,6 +55,8 @@ import { ActivosModule } from './activos/activos.module';
     MatButtonModule,
     MatIconModule,
     MapaModule,
+    graficosModule,
+    ChartsModule,
     ActivosModule ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
