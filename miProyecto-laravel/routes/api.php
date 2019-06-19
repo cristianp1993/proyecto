@@ -11,11 +11,13 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::post('sendPasswordResetLink', 'ResetPasswordController@sendEmail');
     Route::post('resetPassword', 'ChangePasswordController@process');
-    Route::post('store', 'investigadorController@store');
-
-
+    
 });
 
+route::group(['middleware' => 'CORS'],function(){
+    Route::post('store', 'investigadorController@store');
+    Route::post('guardarProyecto', 'ProyectoController@guardarProyecto');
+});
 
 
 

@@ -6,13 +6,15 @@ import { EntidadComponent } from './entidad/entidad.component';
 import { GrupoInvestigacionComponent } from './grupo-investigacion/grupo-investigacion.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { TarjetaInvestigadorComponent } from './tarjeta-investigador/tarjeta-investigador.component';
 
 @NgModule({
   declarations: [
     ProyectoComponent,
     InvestigadorComponent,
     EntidadComponent,
-    GrupoInvestigacionComponent
+    GrupoInvestigacionComponent,
+    TarjetaInvestigadorComponent
   ],
   exports:[
     ProyectoComponent,

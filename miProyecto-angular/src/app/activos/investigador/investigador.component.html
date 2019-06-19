@@ -3,17 +3,16 @@
         <strong>Investigador</strong>
       </div>    
       <div class="card-body">
-        <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12"> 
-          <div class="col-md-6">
-            <div class="form-group">
-            <label for="inv_nombre">Nombre</label>            
-            <input type="text" class="form-control" name="inv_nombre" id="nombre" placeholder="Ingrese su nombre"
-             [(ngModel)]="form.inv_nombre" required>          
-            </div>
+        <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12">           
             <div class="form-group">
               <label for="inv_cedula">Cedula</label>
               <input type="number" class="form-control" name="inv_cedula" id="inv_cedula" placeholder="Ingrese su cedula" 
               [(ngModel)]="form.inv_cedula" required>          
+            </div>
+            <div class="form-group">
+            <label for="inv_nombre">Nombre</label>            
+            <input type="text" class="form-control" name="inv_nombre" id="nombre" placeholder="Ingrese su nombre"
+             [(ngModel)]="form.inv_nombre" required>          
             </div>
             <div class="form-group">
               <label for="inv_apellPater">Primer Apellido</label>
@@ -24,10 +23,8 @@
               <label for="inv_apellMater">Segundo Apellido</label>
               <input type="text" class="form-control" name="inv_apellMater" id="inv_apellMater" placeholder="Segundo Apellido" 
               [(ngModel)]="form.inv_apellMater" required>
-            </div>
-            
-          </div>
-          <div class="col-md-6 float-left">
+            </div>            
+          
             <div class="form-group">
             <label for="inv_correo">Correo</label>
             <input type="text" class="form-control" name="inv_correo" id="inv_correo" placeholder="Ingrese su correo" 
@@ -48,7 +45,7 @@
               <input type="text" class="form-control" name="fk_ent_codigo" id="fk_ent_codigo" 
               placeholder="Ingrese la entidad" [(ngModel)]="form.fk_ent_codigo" required>
             </div>
-          </div>
+          
           <div class="btn btn-center">
             <button type="submit" class="btn btn-primary" [disabled]="!investigadorForm.valid">Guardar</button>                
           </div>
