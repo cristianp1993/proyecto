@@ -1,56 +1,57 @@
-<div class="investigator card">
-    <div class="card-header text-center">
-        <strong>Investigador</strong>
-      </div>    
-      <div class="card-body">
-        <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12">           
-            <div class="form-group">
-              <label for="inv_cedula">Cedula</label>
-              <input type="number" class="form-control" name="inv_cedula" id="inv_cedula" placeholder="Ingrese su cedula" 
-              [(ngModel)]="form.inv_cedula" required>          
-            </div>
-            <div class="form-group">
-            <label for="inv_nombre">Nombre</label>            
-            <input type="text" class="form-control" name="inv_nombre" id="nombre" placeholder="Ingrese su nombre"
-             [(ngModel)]="form.inv_nombre" required>          
-            </div>
-            <div class="form-group">
-              <label for="inv_apellPater">Primer Apellido</label>
-              <input type="text" class="form-control" name="inv_apellPater" id="inv_apellPater" placeholder="Primer Apellido" 
-              [(ngModel)]="form.inv_apellPater" required>
-            </div>
-            <div class="form-group">
-              <label for="inv_apellMater">Segundo Apellido</label>
-              <input type="text" class="form-control" name="inv_apellMater" id="inv_apellMater" placeholder="Segundo Apellido" 
-              [(ngModel)]="form.inv_apellMater" required>
-            </div>            
-          
-            <div class="form-group">
-            <label for="inv_correo">Correo</label>
-            <input type="text" class="form-control" name="inv_correo" id="inv_correo" placeholder="Ingrese su correo" 
-            [(ngModel)]="form.inv_correo" required>          
-            </div>
-            <div class="form-group">
-              <label for="inv_telefono">Telefono</label>
-              <input type="number" class="form-control" name="inv_telefono" id="inv_telefono" placeholder="Ingrese Telefono" 
-              [(ngModel)]="form.inv_telefono" required>
-            </div>
-            <div class="form-group">
-              <label for="ciudad">Ciudad</label>
-              <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Seleccione ciudad" 
-              [(ngModel)]="form.fk_ciu_codigo" required>
-            </div>
-            <div class="form-group">
-              <label for="fk_ent_codigo">Entidad</label>
-              <input type="text" class="form-control" name="fk_ent_codigo" id="fk_ent_codigo" 
-              placeholder="Ingrese la entidad" [(ngModel)]="form.fk_ent_codigo" required>
-            </div>
-          
-          <div class="btn btn-center">
-            <button type="submit" class="btn btn-primary" [disabled]="!investigadorForm.valid">Guardar</button>                
-          </div>
-        </form>
-  
+<div class="row ">
+    <button class="btn btn-success center-block" [hidden] = "!cargarform" >Adicion de Investigadores</button>
+</div>     
+  <br>
+  <hr>
+  <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12 row animated fadeIn">    
+    <div>        
+      <div class="form-group">
+        <label for="inv_cedula">Cedula</label>
+        <input type="number" class="form-control" name="inv_cedula" id="inv_cedula" placeholder="Ingrese su cedula" 
+        [(ngModel)]="form.inv_cedula" required>          
       </div>
-  </div>
+      <div class="form-group">
+      <label for="inv_nombre">Nombre</label>            
+      <input type="text" class="form-control" name="inv_nombre" id="nombre" placeholder="Ingrese su nombre"
+        [(ngModel)]="form.inv_nombre" required>          
+      </div>
+      <div class="form-group">
+        <label for="inv_apellPater">Primer Apellido</label>
+        <input type="text" class="form-control" name="inv_apellPater" id="inv_apellPater" placeholder="Primer Apellido" 
+        [(ngModel)]="form.inv_apellPater" required>
+      </div>
+      <div class="form-group">
+        <label for="inv_apellMater">Segundo Apellido</label>
+        <input type="text" class="form-control" name="inv_apellMater" id="inv_apellMater" placeholder="Segundo Apellido" 
+        [(ngModel)]="form.inv_apellMater" required>
+      </div>            
     
+      <div class="form-group">
+      <label for="inv_correo">Correo</label>
+      <input type="text" class="form-control" name="inv_correo" id="inv_correo" placeholder="Ingrese su correo" 
+      [(ngModel)]="form.inv_correo" required>          
+      </div>
+      <div class="form-group">
+        <label for="inv_telefono">Telefono</label>
+        <input type="number" class="form-control" name="inv_telefono" id="inv_telefono" placeholder="Ingrese Telefono" 
+        [(ngModel)]="form.inv_telefono" required>
+      </div>
+      <div class="form-group">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" class="form-control" name="ciudad" id="ciudad" placeholder="Seleccione ciudad" 
+        [(ngModel)]="form.fk_ciu_codigo" required>
+      </div>
+      <div class="form-group">
+        <label for="fk_ent_codigo">Entidad</label>
+        <input type="text" class="form-control" name="fk_ent_codigo" id="fk_ent_codigo" 
+        placeholder="Ingrese la entidad" [(ngModel)]="form.fk_ent_codigo" required>
+      </div>
+    </div>
+    <div class="btn btn-center row">
+      <button type="submit" class="btn btn-primary" [disabled]="!investigadorForm.valid">Guardar</button>                
+    </div>
+  </form>
+
+    <hr>
+  <h3 class="text-center"> TARJETA DE INVESTIGADORES</h3>
+  <app-tarjeta-investigador class="fadeIn"></app-tarjeta-investigador>

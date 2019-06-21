@@ -11,13 +11,15 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  
+  anio:number;
   
   //constructor
   constructor(private jarwis:JarwisService,
               private token:TokenService,
               private route:Router,
               private auth: AuthService) {
+
+                this.anio= new Date().getFullYear();
     
   }
   

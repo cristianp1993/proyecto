@@ -10,8 +10,24 @@ class investigadorController extends Controller
 {
     //funciones 
     public function index(){
+        // echo "Inicio de metodo";
 
-        echo "Index de investigador";
+        $investigadores = T_investigador::all();
+
+        return response()->json(array(
+            'investigador' => $investigadores,
+            'status' => 'success'
+        ),200);
+
+        // $investigadores = T_investigador::all();        
+        // //dd($investigadores);        
+
+        // $respuesta = array(
+        //     'mensaje' => 'Cargados exitosamente',
+        //     'investigadores' => $investigadores
+        // );
+
+        // return 'casa';
     }
     
     public function show( ){                
@@ -37,16 +53,18 @@ class investigadorController extends Controller
             
             $investigador->save();
             
-            return  $mensaje = "Se agrego el investigador";
+            $mensaje = "Se agrego el investigador";
                 
         } else {
 
-            return $mensaje = "No se ingreso el investigador";
+            $mensaje = "No se ingreso el investigador";
         }
 
-        return $mensaje;
-        // return response()->json([ 'messaje'  => $mensaje,
-        //                           'error' => 'No se inserto'],201);
+        // return $mensaje;
+        return response()->json([ 
+            'messaje'  => $mensaje,
+            'error' => 'No se inserto'
+        ]);
         // return response()->json($investigador,200); 
 
     }

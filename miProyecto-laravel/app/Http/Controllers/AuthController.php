@@ -32,8 +32,9 @@ class AuthController extends Controller
         if (!$token = auth()->attempt($credentials)) {
             return response()->json(['error' => 'Correo o contraseña incorrectos'], 401);
         }
-
+        
         return $this->respondWithToken($token);
+        
     }
 
     // Funcion de registro

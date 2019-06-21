@@ -19,9 +19,12 @@ export class InvestigadorComponent implements OnInit {
     fk_ent_codigo: null
   }
 
+   cargarform : boolean = true;
+
   constructor(private investigador: InvestigadorService) { }
 
-  ngOnInit() {
+  ngOnInit() {   
+    
   }
 
   onSubmit(){
@@ -30,7 +33,5 @@ export class InvestigadorComponent implements OnInit {
       data => console.log(data),
       error => console.log(error));
   }
-
-  
 
 }

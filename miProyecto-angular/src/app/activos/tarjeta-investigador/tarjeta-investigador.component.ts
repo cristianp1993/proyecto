@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InvestigadorService } from 'src/app/services_activos/investigador.service';
 
 @Component({
   selector: 'app-tarjeta-investigador',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TarjetaInvestigadorComponent implements OnInit {
 
-  constructor() { }
+   public invest = null;
+
+  constructor( private investigador: InvestigadorService) { 
+    
+  }
 
   ngOnInit() {
+    // mostrar investigaores traidos desde el servicio
+    this.investigador.getInvestigador().subscribe(
+      data=>{
+        if(data.status == 'success'){
+          this.invest = data.investigador
+        }
+        console.log(data);
+      },
+      error=>{
+        console.log(error);
+      }
+    )
   }
 
 }

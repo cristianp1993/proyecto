@@ -1,25 +1,16 @@
-<!-- <h1 class="animated fadeIn">Soy el Héroe {{ investigador.nombre | uppercase }} 
-    <small> y mi año de aparicion fue {{ investigador.aparicion | date:'y'}}</small></h1>
-    <hr>
-    
-    <div class="row animated fadeIn">
-        <div class="col-md-4">
-            <img [src]="investigador.img " class="img-fluid" alt="">
-            <br><br>
-            <a class="btn btn-outline-danger btn-block" href="heroes">Regresar</a>
+
+<!-- <h1> {{ invest | json }}</h1> -->
+
+<div class="card-deck" *ngFor="let investigador of invest">
+        <div class="card">
+          <img class="card-img-top" src="/assets/fotoinv.png" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"> {{ investigador.inv_nombre }} {{ investigador.inv_apellPater}}</h5>
+            <h6 class=""> Correo : {{ investigador.inv_correo }} </h6>
+            <h6 class=""> Telefono : {{ investigador.inv_telefono }} </h6>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+            This content is a little bit longer.</p>
+            <button class="btn btn-danger">Editar</button>
+          </div>
         </div>
-    
-        <div class="col-md-8">
-            <h3 class="text-center"> {{ investigador.nombre }} </h3>
-            <hr>
-    
-            <p>
-                {{ investigador.bio }}
-            </p>
-            <div class="imagen">
-                <img *ngIf="investigador.casa == 'Marvel'" class="log-casa" src="/assets/img/marvel-logo.png" alt="">
-                <img *ngIf="investigador.casa == 'DC'" class="log-casa" src="/assets/img/dc-logo.jpg" alt="">
-            </div>
-        </div>
-    
-    </div> -->
+</div>

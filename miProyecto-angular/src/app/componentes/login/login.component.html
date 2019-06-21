@@ -1,10 +1,12 @@
+
+<img src="assets\wallpaper3.jpg" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
 <div class="login card col-md-5 offset-md-8">
-  <div class="card-header text-center">
+  <div class="card-header text-center fadeIn">
       <strong>Iniciar Sesión</strong>
     </div>  
 
     <div class="card-body">
-      <form #loginForm=ngForm (ngSubmit)="onSubmit()">
+      <form #loginForm=ngForm (ngSubmit)="onSubmit()" class="animated fadeIn">
 
         <!-- Mensaje de error si la autenticacion no es correcta -->
         <div class="alert alert-danger" [hidden]="!error">
@@ -36,4 +38,10 @@
 
     </div>
 </div>
-  
+<footer class="footer bg-dark text-center">
+
+    <div class="container">
+        &copy; {{ anio }} Cristian Piedrahita
+    </div>
+
+</footer>
