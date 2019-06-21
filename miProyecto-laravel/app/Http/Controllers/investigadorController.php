@@ -55,16 +55,13 @@ class investigadorController extends Controller
             
             $mensaje = "Se agrego el investigador";
                 
-        } else {
-
-            $mensaje = "No se ingreso el investigador";
-        }
+        } 
 
         // return $mensaje;
-        return response()->json([ 
-            'messaje'  => $mensaje,
-            'error' => 'No se inserto'
-        ]);
+        return response()->json(array(
+            'investigador' => $mensaje,
+            'status' => 'success'
+        ),200);
         // return response()->json($investigador,200); 
 
     }

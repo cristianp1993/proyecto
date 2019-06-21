@@ -12,6 +12,8 @@ import { RequestResetComponent } from './componentes/request-reset/request-reset
 import { ResponseResetComponent } from './componentes/response-reset/response-reset.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+// alert
+
 
 
 //importacion del formModulo
@@ -57,7 +59,8 @@ import { graficosModule } from "./analisis/graficos.module";
     MapaModule,
     graficosModule,
     ChartsModule,
-    ActivosModule ],
+    ActivosModule,
+     ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
     SnotifyService

@@ -1,9 +1,10 @@
 <div class="row ">
-    <button class="btn btn-success center-block" [hidden] = "!cargarform" >Adicion de Investigadores</button>
+    <button (click)="mostrarForm()" class="btn btn-success center-block" >Adicion de Investigadores</button>
 </div>     
   <br>
   <hr>
-  <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" class="form-horizontal col-md-12 row animated fadeIn">    
+  <form #investigadorForm=ngForm (ngSubmit)="onSubmit()" *ngIf="mostrar"
+  class="form-horizontal mostrar-form col-md-12 row animated fadeIn">    
     <div>        
       <div class="form-group">
         <label for="inv_cedula">Cedula</label>

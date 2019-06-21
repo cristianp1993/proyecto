@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InvestigadorService } from 'src/app/services_activos/investigador.service';
+import swal from'sweetalert2';
 
 @Component({
   selector: 'app-investigador',
@@ -19,7 +20,8 @@ export class InvestigadorComponent implements OnInit {
     fk_ent_codigo: null
   }
 
-   cargarform : boolean = true;
+  mostrar : boolean = false;
+  mensaje :string = "";
 
   constructor(private investigador: InvestigadorService) { }
 
@@ -32,6 +34,18 @@ export class InvestigadorComponent implements OnInit {
     this.investigador.createInv(this.form).subscribe(
       data => console.log(data),
       error => console.log(error));
+      swal.fire({
+        title: 'Hecho!',
+        html: 'Investigador agregado',
+        type: 'success',
+        timer: 2000
+      })
+      
   }
 
+  
+
+  mostrarForm(){
+    this.mostrar = !this.mostrar;
+  }
 }
