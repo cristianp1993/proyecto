@@ -1,0 +1,15 @@
+<div class="card-deck" *ngFor="let proyectos of proyecto">
+  <div class="card">
+    <!-- <img class="card-img-top" src="/assets/fotoinv.png" alt="Card image cap"> -->
+    <div class="card-body">
+      <h5 class="card-title"> {{ proyectos.pro_nombre }} </h5>
+      <h6 class=""> Fecha inicio planeada : {{ proyectos.pro_fecplan }} </h6>
+      <h6 class=""> Entidad : {{ proyectos.fk_ent_codigo }} </h6>
+      <h6 class=""> Area del proyectos : {{ proyectos.fk_are_codigo }} </h6>
+      <h6 class=""> Tipo de investigacion : {{ proyectos.fk_inv_codigo }} </h6>
+      <!-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.
+      This content is a little bit longer.</p> -->
+      <button class="btn btn-danger">Editar</button>
+    </div>
+  </div>
+</div>

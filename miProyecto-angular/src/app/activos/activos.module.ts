@@ -7,6 +7,7 @@ import { GrupoInvestigacionComponent } from './grupo-investigacion/grupo-investi
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { TarjetaInvestigadorComponent } from './tarjeta-investigador/tarjeta-investigador.component';
+import { TajetaProyectoComponent } from './tajeta-proyecto/tajeta-proyecto.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { TarjetaInvestigadorComponent } from './tarjeta-investigador/tarjeta-inv
     InvestigadorComponent,
     EntidadComponent,
     GrupoInvestigacionComponent,
-    TarjetaInvestigadorComponent
+    TarjetaInvestigadorComponent,
+    TajetaProyectoComponent
   ],
   exports:[
     ProyectoComponent,

@@ -1,3 +1,71 @@
-<p>
-  proyecto works!
-</p>
+<div class="row ">
+  <button (click)="mostrarForm()" class="btn btn-success center-block" >Adicionar Proyecto</button>
+</div>     
+<br>
+<hr>
+<form #proyectoForm=ngForm (ngSubmit)="onSubmit()" *ngIf="mostrar"
+class="form-horizontal mostrar-form col-md-12 row animated fadeIn">    
+<div class="form-group col-md-12 text-center">
+  <label for="pro_nombre">Nombre proyecto</label>
+  <input type="text" class="form-control" name="pro_nombre" id="pro_nombre" placeholder="Nombre proyecto" 
+  [(ngModel)]="form.pro_nombre" required>          
+</div>
+<div class="form-group">
+  <label for="pro_fecplan">Fecha de inicio</label>            
+  <input type="date" class="form-control" name="pro_fecplan" id="pro_fecplan" value="2019-06-01"placeholder="Fecha de inicio"
+  [(ngModel)]="form.pro_fecplan" required>          
+</div>
+<div class="form-group">
+  <label for="pro_coor_x">Coordenada x</label>
+  <input type="text" class="form-control" name="pro_coor_x" id="pro_coor_x" placeholder="Coordenada x" 
+  [(ngModel)]="form.pro_coor_x" >          
+</div>
+<div class="form-group">
+  <label for="pro_coor_y">Coordenada y</label>
+  <input type="text" class="form-control" name="pro_coor_y" id="pro_coor_y" placeholder="Coordenada y" 
+  [(ngModel)]="form.pro_coor_y">
+</div>
+<div class="form-group">
+  <label for="fk_ent_codigo">Entidad</label>
+  <select class="form-control" name="fk_ent_codigo" id="fk_ent_codigo" [(ngModel)]="form.fk_ent_codigo"  required>
+    <option [value]="entidad.ent_codigo" *ngFor="let entidad of entidades" >{{ entidad.ent_nombre }}</option>
+  </select>
+</div>
+
+<div class="form-group">
+  <label for="fk_are_codigo">Area proyecto</label>
+  <select class="form-control" name="fk_are_codigo" id="fk_are_codigo" [(ngModel)]="form.fk_are_codigo"  required>
+    <option [value]="areas.are_codigo" *ngFor="let areas of area" >{{ areas.are_nombre }}</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="fk_inv_codigo">Tipo investigacion</label>
+  <select class="form-control" name="fk_inv_codigo" id="fk_inv_codigo" [(ngModel)]="form.fk_inv_codigo"  required>
+    <option [value]="tipos.inv_codigo" *ngFor="let tipos of tipo" >{{ tipos.inv_nombre }}</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="pro_presu_plan">Presupuesto planeado</label>
+      <input type="number" class="form-control" name="pro_presu_plan" id="pro_presu_plan" placeholder="Presupuesto planeado" 
+      [(ngModel)]="form.pro_presu_plan" required>
+</div>
+<div class="form-group">
+    <div>        
+      <label for="pro_presu_final">Presupuesto final</label>
+      <input type="number" class="form-control" name="pro_presu_final" id="pro_presu_final" placeholder="Presupuesto final" 
+      [(ngModel)]="form.pro_presu_final">
+    </div>            
+</div>
+  <div class="form-group col-md-12 text-center">
+    <label for="pro_observ">Observacion del proyecto</label>    
+    <textarea type="textbox" class="form-control" name="pro_observ" id="pro_observ" placeholder="Observacion sobre el proyecto" 
+    [(ngModel)]="form.pro_observ" required>   </textarea>       
+  </div>
+  <div class="row col-md-12">
+    <button type="submit" class="btn btn-primary btn-lg col-md-2 offset-6" [disabled]="!proyectoForm.valid">Guardar</button>                
+  </div>
+</form>
+
+  <hr>
+<h3 class="text-center">PROYECTOS</h3>
+<app-tajeta-proyecto class="fadeIn"></app-tajeta-proyecto>

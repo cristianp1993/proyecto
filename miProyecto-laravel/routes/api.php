@@ -27,6 +27,9 @@ route::group(['middleware' => 'CORS'],function(){
     // rutas proyectos
     Route::get('proyecto-index','proyectoController@index');
     Route::post('guardarProyecto', 'ProyectoController@guardarProyecto');
+
+    Route::get('tipo-index','tipoProyectoController@index');
+    Route::get('area-index','AreaController@index');
     
 });
 
