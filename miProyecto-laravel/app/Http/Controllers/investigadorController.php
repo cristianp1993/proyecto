@@ -11,23 +11,12 @@ class investigadorController extends Controller
     //funciones 
     public function index(){
         // echo "Inicio de metodo";
-
         $investigadores = T_investigador::all();
 
         return response()->json(array(
             'investigador' => $investigadores,
             'status' => 'success'
         ),200);
-
-        // $investigadores = T_investigador::all();        
-        // //dd($investigadores);        
-
-        // $respuesta = array(
-        //     'mensaje' => 'Cargados exitosamente',
-        //     'investigadores' => $investigadores
-        // );
-
-        // return 'casa';
     }
     
     public function show( ){                
@@ -38,7 +27,6 @@ class investigadorController extends Controller
     public function store(Request $request){
 
         if($request){
-
             
             $investigador = new T_investigador([
             'inv_nombre' => $request->get('inv_nombre'),

@@ -14,12 +14,18 @@ Route::group([
 });
 
 route::group(['middleware' => 'CORS'],function(){
+    // ruta de las ciudades
+    Route::get('ciudades-index','ciudadesController@index');
 
     // Rutas investigador
     Route::post('store', 'investigadorController@store');
     Route::get('investigador-index','investigadorController@index');
 
+    // rutas entidades
+    Route::get('entidades-index','entidadesController@index');
 
+    // rutas proyectos
+    Route::get('proyecto-index','proyectoController@index');
     Route::post('guardarProyecto', 'ProyectoController@guardarProyecto');
     
 });
