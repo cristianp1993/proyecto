@@ -29,6 +29,7 @@ export class ProyectoComponent implements OnInit {
   public tipo;
   public area;
 
+
   constructor(
     private _proyecto : ProyectoService,
     private _entidades : EntidadesService) { }
@@ -86,7 +87,10 @@ export class ProyectoComponent implements OnInit {
         html: 'Proyecto creado',
         type: 'success',
         timer: 2000
-      })
+      });
+
+      // this._proyecto.getProjects();
+
   }  
 
   mostrarForm(){

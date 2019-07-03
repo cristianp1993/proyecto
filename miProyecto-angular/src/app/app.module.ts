@@ -12,9 +12,8 @@ import { RequestResetComponent } from './componentes/request-reset/request-reset
 import { ResponseResetComponent } from './componentes/response-reset/response-reset.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-// alert
-
-
+// mapa leaflet
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 //importacion del formModulo
 import { FormsModule } from "@angular/forms";
@@ -60,7 +59,8 @@ import { graficosModule } from "./analisis/graficos.module";
     graficosModule,
     ChartsModule,
     ActivosModule,
-     ],
+    LeafletModule.forRoot()
+  ],
   providers: [
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults},
     SnotifyService

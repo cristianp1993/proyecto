@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MapaComponent } from './mapa/mapa.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { MapaComponent } from './mapa/mapa.component';
     MapaComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LeafletModule
+    
   ]
 })
 export class MapaModule { }

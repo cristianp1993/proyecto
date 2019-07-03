@@ -38,13 +38,13 @@ class ProyectoController extends Controller
             
             $investigador->save();
             
-            $mensaje = "Se agrego el investigador";
+            $mensaje = "Se agrego el proyecto";
                 
         } 
 
         // return $mensaje;
         return response()->json(array(
-            'investigador' => $mensaje,
+            'proyecto' => $mensaje,
             'status' => 'success'
         ),200);
     }
